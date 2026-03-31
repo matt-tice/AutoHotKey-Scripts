@@ -11,5 +11,5 @@
 ^g::Esc
 ^k::
 {
-SendInput "+{End}{Del}"
+SendInput "+{End}{Del}"     ; Deletes from the current point to the end of the line
 }
