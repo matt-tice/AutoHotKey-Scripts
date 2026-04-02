@@ -13,3 +13,11 @@
 {
 SendInput "+{End}{Del}"     ; Deletes from the current point to the end of the line
 }
+!f::
+{
+SendInput "^{Right}"     ; Usually will jump forward one word
+}
+!b::
+{
+SendInput "^{Left}"     ; Usually will jump back one word
+}
