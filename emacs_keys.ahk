@@ -33,3 +33,25 @@ SendInput "^{Left}"     ; Usually will jump back one word
 {
 SendInput "+^{Right}{Del}"    ; Usually deletes the next word in a line
 }
+
+!c::    ; Makes the next letter uppercase
+{
+    A_Clipboard := ""              ; Clear clipboard
+    SendInput "+{Right}^c"          ; Move right and copy
+    if ClipWait(1)                 ; Wait up to 1s
+    {
+        A_Clipboard := StrUpper(A_Clipboard)
+        SendInput "^v"
+    }
+}
+
+!l::      ; Makes the next letter lowercase
+{
+    A_Clipboard := ""              ; Clear clipboard
+    SendInput "+{Right}^c"          ; Move right and copy
+    if ClipWait(1)                 ; Wait up to 1s
+    {
+        A_Clipboard := StrLower(A_Clipboard)
+        SendInput "^v"
+    }
+}
